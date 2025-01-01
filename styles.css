@@ -1,3 +1,50 @@
 body {
     background-color: bisque;
+    font-family: "Montserrat", serif;
+    transition: 0.5s all;
+    font-size: 24px;
+}
+
+.nav {
+    background-color: #FFC36A;
+    width: 760px;
+    border-radius: 0 0 30px 30px;
+
+    margin: auto;
+}
+
+.nav__content {
+    padding: 14px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo-name {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.nav__logo {
+    background-color: black;
+    width: 91px;
+    height: 91px;
+    border: 2px solid #F9AE0F;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__name {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.nav__btn:last-child {
+    margin-left: 40px;
 }

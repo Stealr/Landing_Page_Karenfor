@@ -1,14 +1,50 @@
-body {
-    background-color: bisque;
+html {
     font-family: "Montserrat", serif;
-    transition: 0.5s all;
-    font-size: 24px;
+    font-size: calc(14px + (6 * ((100vw - 500px) / 1000)));
 }
 
-.nav {
+body {
+    background-color: bisque;
+}
+
+header {
+    margin: 0 35px;
+    /* transition: 0.3s font-size ease; */
+}
+
+.address {
+    position: absolute;
+    right: 35px;
+    top: 20px;
+}
+
+.metro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.lamp-decor {
+    position: absolute;
+    left: 35px;
+    top: 0px;
+
+}
+
+.lamp-decor img {
+    max-width: 364px;
+    width: 20vw;
+    height: auto;
+}
+
+nav {
     background-color: #FFC36A;
-    width: 760px;
+    max-width: 760px;
+    min-width: 338px;
+    width: 40vw;
     border-radius: 0 0 30px 30px;
+    /* transition: 0.5s width ease; */
 
     margin: auto;
 }
@@ -30,8 +66,10 @@ body {
 
 .nav__logo {
     background-color: black;
-    width: 91px;
-    height: 91px;
+    max-width: 91px;
+    max-height: 91px;
+    width: 4.6vw;
+    height: 4.6vw;
     border: 2px solid #F9AE0F;
     border-radius: 9px;
 
@@ -40,11 +78,34 @@ body {
     justify-content: center;
 }
 
+.nav__logo img {
+    max-width: 65px;
+    width: 3.5vw;
+    height: auto;
+
+}
+
 .nav__name {
     font-weight: 900;
-    font-size: 32px;
+    font-size: 1.45em;
+}
+
+.nav__btn {
+    cursor: pointer;
 }
 
 .nav__btn:last-child {
-    margin-left: 40px;
+    margin-left: 1vw;
+}
+
+.metro img {
+    width: 2.2vw;
+    height: auto;
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+    
 }

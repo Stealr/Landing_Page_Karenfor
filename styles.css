@@ -3,13 +3,23 @@ html {
     font-size: calc(14px + (6 * ((100vw - 500px) / 1000)));
 }
 
-body {
-    background-color: bisque;
-}
+/*------------------------------------------------------------------*/
+/*--------------------------- Header -------------------------------*/
+
+/*--------------------------------------*/
+/*------------ Header_Top --------------*/
+/*--------------------------------------*/
 
 header {
-    margin: 0 35px;
+    padding: 0 35px;
+    position: relative;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
     /* transition: 0.3s font-size ease; */
+
+    background: linear-gradient(145deg, #FFF5E0, #FADCAD);
+    padding-bottom: 230px;
 }
 
 .address {
@@ -18,11 +28,17 @@ header {
     top: 20px;
 }
 
-.metro {
+.address__metro {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+}
+
+.address__metro img {
+    max-width: 42.23px;
+    width: 2.2vw;
+    height: auto;
 }
 
 .lamp-decor {
@@ -60,7 +76,7 @@ nav {
 .nav__logo-name {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.25vw;
 
 }
 
@@ -82,7 +98,6 @@ nav {
     max-width: 65px;
     width: 3.5vw;
     height: auto;
-
 }
 
 .nav__name {
@@ -91,21 +106,264 @@ nav {
 }
 
 .nav__btn {
+    font-size: 0.9em;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav__btn:hover {
+    color: #ff5100;
 }
 
 .nav__btn:last-child {
     margin-left: 1vw;
 }
 
-.metro img {
-    width: 2.2vw;
+
+/*---------------------------------------*/
+/*----------- Header_Center -------------*/
+/*---------------------------------------*/
+
+
+.header__content {
+    display: flex;
+    justify-content: end;
+    margin-top: 41px;
+    margin-right: 7.95vw;
+}
+
+.header__content__left {
+    margin-top: 9.8vw;
+    margin-right: 3.4vw;
+}
+
+.header__content__left h2 {
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 1.56vw;
+    line-height: 1.22em;
+}
+
+.header__right__row-b {
+    text-align: center;
+}
+
+.header__right__row-b img {
+    max-width: 626px;
+    width: 33vw;
     height: auto;
+}
+
+.header__right__row {
+    display: flex;
+    gap: 7.35vw;
+    position: relative;
+}
+
+.header__right__row.top-row {
+    align-items: flex-end;
+}
+
+.header__right__row.bottom-row {
+    align-items: flex-start;
+}
+
+.header__circle-card {
+    max-width: 192px;
+    max-height: 192px;
+    width: 10vw;
+    height: 10vw;
+    background-color: #fff;
+    border-radius: 50%;
+
+    position: relative;
+
+    background-image: conic-gradient(from 160deg, #FADEB2 0%, #FED589 43%, #FFF1DA 70%, #FADEB2 94%);
+    filter: drop-shadow(10px 7px 7px rgba(0, 0, 0, 0.2));
+    transition: transform 1.2s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+
+.header__circle-card.top-card {
+    margin-bottom: 3.5vw;
+}
+
+.header__circle-card.bottom-card {
+    margin-top: 3.5vw;
+}
+
+.header__circle-card:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.header__circle-card img {
+    width: 50%;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/*-------------------------------------------------------------------*/
+/*------------------------ Section About us -------------------------*/
+/*-------------------------------------------------------------------*/
+
+.about-us {
+    display: flex;
+    background: linear-gradient(180deg, #FFBF41, #FFA807);
+}
+
+.about-us__text {
+    padding: 35px;
+}
+
+.about-us__text h3 {
+    font-size: 1.78em;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.about-us__text p {
+    line-height: 1.65em;
+    text-align: justify;
+}
+
+/*---------------------------------------*/
+/*--------------- Slider ----------------*/
+/*---------------------------------------*/
+
+/* .slider-container {
+    display: flex;
+    width: 104px;
+    height: 104px;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+
+}
+
+.test-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    color: white;
+    border: 2px solid white;
+}
+
+.slider-container img {
+    flex: 0, 0, 100%;
+} */
+
+.about-us__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-container img {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+
+    backdrop-filter: blur(8.5px);
+    
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+}
+
+.slider-button.prev {
+    left: 20px;
+}
+
+.slider-button.next {
+    right: 20px;
+}
+
+.slider-button.prev img {
+    transform: translateX(-2px);
+}
+
+.slider-button.next img {
+    transform: translateX(2px);
+}
+
+
+/*-------------------------------------------------------------------*/
+/*------------------------  Media responses -------------------------*/
+/*-------------------------------------------------------------------*/
+
+@media (min-width: 1921px) {
+    html {
+        font-size: 22.6px;
+    }
+
+    .nav__logo-name {
+        gap: 24px;
+    }
+
+    .header__content {
+        margin-right: 152px;
+    }
+
+    .header__content__left {
+        margin-top: 188px;
+        margin-right: 65px;
+    }
+
+    .header__content__left h2 {
+        margin-bottom: 30px;
+    }
+
+    .header__right__row {
+        gap: 141px;
+    }
+
+    .header__circle-card.top-card {
+        margin-bottom: 67px;
+    }
+
+    .header__circle-card.bottom-card {
+        margin-top: 67px;
+    }
 }
 
 @media (max-width: 500px) {
     body {
         font-size: 14px;
     }
-    
+
 }

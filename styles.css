@@ -5,6 +5,7 @@ html {
 
 /*------------------------------------------------------------------*/
 /*--------------------------- Header -------------------------------*/
+/*------------------------------------------------------------------*/
 
 /*--------------------------------------*/
 /*------------ Header_Top --------------*/
@@ -119,11 +120,9 @@ nav {
     margin-left: 1vw;
 }
 
-
 /*---------------------------------------*/
 /*----------- Header_Center -------------*/
 /*---------------------------------------*/
-
 
 .header__content {
     display: flex;
@@ -212,11 +211,19 @@ nav {
 
 .about-us {
     display: flex;
+    flex-direction: column;
+
     background: linear-gradient(180deg, #FFBF41, #FFA807);
+}
+
+.slide-text {
+    display: flex;
 }
 
 .about-us__text {
     padding: 35px;
+    flex: 0 1 900px;
+    width: 900;
 }
 
 .about-us__text h3 {
@@ -234,50 +241,41 @@ nav {
 /*--------------- Slider ----------------*/
 /*---------------------------------------*/
 
-/* .slider-container {
-    display: flex;
-    width: 104px;
-    height: 104px;
-    overflow: hidden;
-    user-select: none;
-    pointer-events: none;
-
+.main-slider {
+    max-width: 1020px;
+    /* width: 53vw; */
+    flex: 0 0 53.3vw;
+    height: 35.3vw;
 }
 
-.test-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    color: white;
-    border: 2px solid white;
-}
-
-.slider-container img {
-    flex: 0, 0, 100%;
-} */
-
-.about-us__slider {
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slider-container img {
-    flex: 0 0 100%;
+.swiper-slide img {
     width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-.slider-button {
+.thumbnail-slider {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.thumbnail-background {
+    background-color: black;
+    padding: 20px 10px;
+}
+
+.thumbnail-slider img {
+    width: 330px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.thumbnail-slider .swiper-slide-active img {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.swiper-button {
     position: absolute;
     display: flex;
     align-items: center;
@@ -292,7 +290,7 @@ nav {
     border-radius: 50%;
 
     backdrop-filter: blur(8.5px);
-    
+
 
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -300,16 +298,16 @@ nav {
     z-index: 10;
 }
 
-.slider-button:hover {
+.swiper-button:hover {
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
-.slider-button.prev {
+.swiper-button.prev {
     left: 20px;
 }
 
-.slider-button.next {
+.swiper-button.next {
     right: 20px;
 }
 
@@ -319,6 +317,227 @@ nav {
 
 .slider-button.next img {
     transform: translateX(2px);
+}
+
+/*---------------------------------------*/
+/*--------------- Facts -----------------*/
+/*---------------------------------------*/
+
+.about-us__facts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 200px;
+    background-color: rgb(16, 27, 90);
+}
+
+.fact {
+    text-align: center;
+}
+
+.fact__name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #FFD900;
+
+    margin-bottom: 0.68vw;
+}
+
+.fact__desc {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+/*-------------------------------------------------------------------*/
+/*---------------------------  Contacts -----------------------------*/
+/*-------------------------------------------------------------------*/
+
+.contacts {
+    background-color: gray;
+    color: white;
+}
+
+.contacts__content {
+    padding: 50px 389px;
+}
+
+.contacts__info {
+    display: flex;
+    gap: 25px;
+}
+
+.info__block {
+    padding: 45px 35px;
+    flex-basis: 370px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+
+    border-radius: 18px;
+    background-color: hsla(0, 0%, 7%, 0.65);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.22rem;
+}
+
+.info__block img {
+    max-width: 48px;
+    width: 2.5vw;
+    height: auto;
+}
+
+.contacts_form {
+    margin-top: 48px;
+    padding: 52px 205px;
+
+    border-radius: 53px;
+    background-color: hsla(0, 0%, 7%, 0.65);
+}
+
+.contacts_form h3 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.form__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Два столбца одинаковой ширины */
+    grid-template-rows: auto auto auto;
+    /* Три строки по содержимому */
+    gap: 20px;
+    /* Расстояние между элементами */
+    margin-bottom: 25px;
+}
+
+.inputs__row input {
+    border: none;
+    height: 55px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+::placeholder {
+    font-family: "Montserrat", serif;
+}
+
+#tel::placeholder {
+    letter-spacing: 1px;
+}
+
+#theme {
+    border: none;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+#text {
+    border: none;
+
+    height: 170px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    padding: 25px 25px;
+
+    grid-column: span 2;
+}
+
+.inputs__row {
+    display: contents;
+}
+
+.form label {
+    font-size: 0.85rem;
+}
+
+/*---------------------------------------*/
+/*---------- Custom-Checkbox ------------*/
+/*---------------------------------------*/
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    background-color: transparent;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border: 2px solid #b1b1b1;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: #ffffff;
+    background-image: url('assets/check.png');
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.custom-checkbox input[type="checkbox"]:checked:hover {
+    border: 2px solid #b1b1b1;
+    background-color: #b1b1b1;
+}
+
+/*---------------------------------------*/
+
+.btn-box {
+    text-align: center;
+}
+
+.btn-submit {
+    width: 272px;
+    height: 61px;
+    border-radius: 26px;
+    cursor: pointer;
+    border: none;
+    margin-top: 30px;
+
+    background-color: white;
+
+    font-size: 0.85rem;
+
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+    /* Цвет кнопки при наведении */
+}
+
+/*-------------------------------------------------------------------*/
+/*----------------------------- Footer ------------------------------*/
+/*-------------------------------------------------------------------*/
+
+footer {
+    background-color: #2D241D;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+}
+
+footer  .nav__logo{
+    scale: 0.5;
 }
 
 

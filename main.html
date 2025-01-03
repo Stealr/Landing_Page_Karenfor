@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -86,42 +89,152 @@
     </header>
 
     <section class="about-us">
-        <div class="about-us__slider">
-            <div class="slider-container">
-                <!-- <div class="test-img">1</div>
-                <div class="test-img">2</div>
-                <div class="test-img">3</div> -->
-                <img src="assets/images/mall-img1.png" alt="mall-img">
-                <img src="assets/images/mall-img2.jpg" alt="mall-img2">
-                <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+        <!-- Основной слайдер -->
+        <div class="slide-text">
+            <div class="swiper main-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img1.png" alt="mall-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img2.jpg" alt="mall-img2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+                    </div>
+                </div>
+
+                <button class="swiper-button prev">
+                    <!-- Всатвить сюда код svg, чтобы менять цвет стрелки на черный при наведении-->
+                    <img src="assets/prev.svg" alt="prev">
+                </button>
+                <button class="swiper-button next">
+                    <img src="assets/next.svg" alt="next">
+                </button>
+
             </div>
-            <button class="slider-button prev"> 
-                <!-- Всатвить сюда код svg, чтобы менять цвет стрелки на черный при наведении-->
-                <img src="assets/prev.svg" alt="prev">
-            </button>
-            <button class="slider-button next">
-                <img src="assets/next.svg" alt="next">
-            </button>
+
+            <div class="about-us__text">
+                <h3>О Каренфоре</h3>
+                <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
+                    мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство
+                    такого комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование
+                    начинается с
+                    концептуального замысла, учитывающего местные климатические условия, экологические аспекты и
+                    инфраструктуру. Эстетика и функциональность гармонично переплетаются, создавая удобные потоки для
+                    посетителей и обеспечивая максимальную видимость для
+                    арендаторов.
+                </p>
+            </div>
         </div>
-        <div class="about-us__text">
-            <h3>О Каренфоре</h3>
-            <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
-                мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство такого
-                комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование начинается с
-                концептуального замысла, учитывающего местные климатические условия, экологические аспекты и
-                инфраструктуру. Эстетика и функциональность гармонично переплетаются, создавая удобные потоки для
-                посетителей и обеспечивая максимальную видимость для
-                арендаторов.
-            </p>
+
+        <!-- Слайдер миниатюр -->
+        <div class="thumbnail-background">
+            <div class="swiper thumbnail-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img1.png" alt="mall-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img2.jpg" alt="mall-img2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/mall-img3.jpg" alt="mall-img3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-us__facts">
+            <div class="fact">
+                <div class="fact__name">
+                    20+
+                </div>
+                <div class="fact__desc">
+                    Лет Каренфору
+                </div>
+            </div>
+            <div class="fact">
+                <div class="fact__name">
+                    8000 м2
+                </div>
+                <div class="fact__desc">
+                    Арендная площадь
+                </div>
+            </div>
+            <div class="fact">
+                <div class="fact__name">
+                    +30
+                </div>
+                <div class="fact__desc">
+                    Магазинов
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="contacts">
+        <div class="contacts__content">
+            <div class="contacts__info">
+                <div class="info__block">
+                    <img src="assets/phone.png" alt="phone">
+                    +7 (495) 315-08-66
+                </div>
+                <div class="info__block">
+                    <img src="assets/calendar.png" alt="calendar">
+                    С 09:00 до 21:00 без выходных
+                </div>
+                <div class="info__block">
+                    <img src="assets/map-flag.png" alt="map-flag">
+                    Кировоградская ул., 13, Москва
+                </div>
+            </div>
 
+            <div class="contacts_form">
+                <h3>Обратная связь</h3>
+                <form method="get" class="form">
+                    <div class="form__inputs">
+                        <div class="inputs__row">
+                            <input type="text" id="name" placeholder="ФИО" required>
+                            <input type="email" id="email" placeholder="Почта" required>
+                        </div>
+                        <div class="inputs__row">
+                            <input type="tel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10" placeholder="+7 (___) ___ __ __" required>
+                            <select id="theme" name="theme" required>
+                                <option value="op1">тема1</option>
+                                <option value="op2">тема2</option>
+                                <option value="op3">тема3</option>
+                            </select>
+                        </div>
+                        <textarea type="text" id="text" placeholder="Текст обращения" required></textarea>
+                    </div>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked/>
+                        <span>Обработка персональных данных</span>
+                    </label>
+                    <div class="btn-box">
+                        <input type="submit" value="Отправить" class="btn-submit" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </section>
 
     <footer>
-
+        <div class="nav__logo">
+            <img src="/assets/logo.png" alt="logo">
+        </div>
+        © Торговый Центр «Каренфор» 2024
     </footer>
 
 </body>

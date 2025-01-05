@@ -96,7 +96,7 @@ nav {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .nav__logo-name {
@@ -258,6 +258,55 @@ nav {
     justify-content: normal;
 }
 
+.header__content__right-mobile {
+    display: none;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 25px;
+}
+
+.header__square-card {
+    background: linear-gradient(180deg, #FFE6B8, #FFD57D);
+
+    border-radius: 15px;
+    padding: 1.8rem 1rem;
+    flex-basis: 7.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 17px;
+    
+    line-height: 1.22rem;
+}
+
+.header__square-card img {
+    min-width: 60px;
+
+    width: 10vw;
+    height: auto;
+}
+
+.header__building-mobile {
+    opacity: 0;
+    display: none;
+    transition: bottom 1s ease; 
+    width: 100%;
+    text-align: center;
+    z-index: -10;
+    position: absolute;
+    bottom: -50vw;
+}
+
+.header__building-mobile img {
+    min-width: 330px;
+    width: 80%;
+    height: auto;
+}
+
 /*--------------------------------------*/
 
 @media (min-width: 1921px) {
@@ -316,10 +365,19 @@ nav {
         width: 30.625px;
         height: auto;
     }
+
+    .header__building-mobile {
+        display: block;
+    }
 }
 
 
 @media (max-width: 800px) {
+    header {
+        padding-bottom: 25vw;
+        margin-bottom: 0;
+    }
+
     .address-mobile {
         scale: 1;
         opacity: 1;
@@ -342,6 +400,25 @@ nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0;
+    }
+
+    .header__content__right {
+        display: none;
+    }
+
+    .header__content__right-mobile {
+        display: flex;
+    }
+
+    .about-us {
+        position: relative;
+    }
+
+    .header__building-mobile {
+        opacity: 1;
+        transform: none;
+        bottom: -3vw;
     }
 }
 
@@ -359,14 +436,14 @@ nav {
 
 .slide-text {
     display: flex;
+}
 
+.about-us__text.mobile {
+    display: none;
 }
 
 .about-us__text {
     padding: 35px;
-    /* max-width: 600px; */
-    flex: 1 1 auto;
-
 }
 
 .about-us__text h3 {
@@ -380,6 +457,8 @@ nav {
     text-align: justify;
 }
 
+
+
 /*---------------------------------------*/
 /*--------------- Slider ----------------*/
 /*---------------------------------------*/
@@ -390,11 +469,8 @@ nav {
 }
 
 .main-slider {
-    max-width: 100%;
-    max-height: 35vw;
-    height: auto;
-    flex: 1 1 600px;
-    
+
+    max-height: 40.5vw;
 }
 
 /*Нужно чтобы убрать просвечивание правой картинки в слайдере при увеличенном масштабе*/
@@ -419,15 +495,21 @@ nav {
 }
 
 .thumbnail-slider img {
-    width: 330px;
-    height: 220px;
+    max-width: 360px;
+    max-height: 250px;
+    min-width: 300px;
+    min-height: 190px;
+
+    opacity: 0.4;
+    width: 15.625vw;
+    height: 11.45vw;
     object-fit: cover;
     transition: transform 0.3s ease, border 0.3s ease;
 }
 
-.thumbnail-slider .swiper-slide-active img {
-    border: 2px solid rgb(255, 255, 255);
-    /* transform: scale(1.1); */
+.thumbnail-slider .swiper-slide-thumb-active img {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .swiper-button {
@@ -438,9 +520,11 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    width: 62px;
-    height: 62px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 72px;
+    max-height: 72px;
+    width: 3.3vw;
+    height: 3.3vw;
     border-radius: 50%;
     backdrop-filter: blur(8.5px);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -462,34 +546,100 @@ nav {
     right: 20px;
 }
 
-.slider-button.prev img {
+.swiper-button.prev img {
     transform: translateX(-2px);
+    max-width: 28px;
+    width: 1.1vw;
+    height: auto;
 }
 
-.slider-button.next img {
+.swiper-button.next img {
     transform: translateX(2px);
+    max-width: 28px;
+    width: 1.1vw;
+    height: auto;
 }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
+/*------------ Pegination ----------------*/
+
+.swiper-pagination {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: hsla(41, 100%, 50%, 0.1); 
+    backdrop-filter: blur(8.5px);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 5px 11px;
+    width: fit-content !important;
+}
+
+.swiper-pagination-bullet {
+    width: 0.64rem !important;
+    height: 0.64rem !important;
+    background-color: #F4F4F4 !important;
+    border-radius: 50%;
+    margin: 0 0.17rem !important;
+    opacity: 0.85 !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #FFAE00 !important;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/*----------------------------------------*/
+
+@media (max-width: 1250px) {
     .slide-text {
         flex-direction: column;
-        /* Перестраиваем на вертикаль */
-        align-items: center;
+    }
+
+    .about-us__text.mobile {
+        display: block;
     }
 
     .about-us__text {
-        text-align: center;
+        display: none;
+    }
+
+    .container-main-slider {
+        max-width: 100%;
     }
 
     .swiper-button {
-        width: 40px;
-        height: 40px;
+        width: 4.3vw;
+        height: 4.3vw;
     }
 
-    .thumbnail-slider img {
-        width: 80px;
-        /* Уменьшаем миниатюры */
+    .swiper-button.prev img {
+        width: 1.6vw;
+    }
+    
+    .swiper-button.next img {
+        width: 1.6vw;
+    }
+
+    .main-slider {
+        max-height: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .swiper-button {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .thumbnail-background {
+        display: none;
     }
 }
 
@@ -518,10 +668,15 @@ nav {
 /*---------------------------------------*/
 
 .about-us__facts {
-    height: 200px;
     background-color: rgb(16, 27, 90);
+    background-image: url("assets/img-facts.png");
+}
+
+.about-us__blur {
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
+    height: 200px;
 }
 
 .facts {
@@ -530,7 +685,6 @@ nav {
     flex-wrap: wrap;
     gap: 2rem;
     width: 100%;
-
     margin: 0 40px;
 }
 
@@ -558,6 +712,7 @@ nav {
 
 .contacts {
     background-color: gray;
+    position: relative;
     color: white;
     padding: 3rem 0;
 }
@@ -667,6 +822,7 @@ nav {
     border-radius: 15px;
     font-size: 0.9rem;
     padding: 25px 25px;
+    resize: none;
 
     grid-column: span 2;
 }
@@ -769,6 +925,7 @@ nav {
 /*-------------------------------------------------------------------*/
 
 footer {
+
     background-color: #2D241D;
     color: white;
     display: flex;

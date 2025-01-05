@@ -43,4 +43,38 @@ document.addEventListener("DOMContentLoaded", () => {
       swiper: thumbnailSwiper, // Привязка миниатюр
     },
   });
+
+
+  const customSelect = document.querySelector('.custom-select');
+  const selectSelected = customSelect.querySelector('.select-selected');
+  const selectItems = customSelect.querySelector('.select-items');
+  const selectElement = customSelect.querySelector('select');
+
+  // Открытие/закрытие списка
+  selectSelected.addEventListener('click', () => {
+    selectItems.classList.toggle('active');
+    selectSelected.classList.toggle('active');
+  });
+
+  // Обработка кликов на элементы списка
+  selectItems.addEventListener('click', (e) => {
+    const selectedValue = e.target.textContent;
+
+    selectSelected.textContent = selectedValue;
+
+    selectElement.value = selectedValue;
+
+    selectItems.classList.remove('active');
+    selectSelected.classList.remove('active');
+  });
+
+  // Закрытие выпадающего списка при клике вне области
+  document.addEventListener('click', (e) => {
+    if (!customSelect.contains(e.target)) {
+      selectItems.classList.remove('active');
+      selectSelected.classList.remove('active'); // Убираем класс стрелки
+    }
+  });
 });
+
+

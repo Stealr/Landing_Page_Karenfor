@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       1385: {
         slidesPerView: 4.3,
       },
-      1700: {
+      1750: {
         slidesPerView: 5.3,
       },
     },
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Инициализация основного слайдера
   var mainSwiper = new Swiper('.main-slider', {
     spaceBetween: 0,
+    loop: true,
     navigation: {
       nextEl: '.swiper-button.next',
       prevEl: '.swiper-button.prev',

@@ -42,8 +42,16 @@
             </div>
             <p class="distance-metro">В 3 минутах от метро</p>
         </div>
+        <div class="lamp-decor">
+            <div class="lamp-light"> </div>
+            <img src="assets/lamp.png" alt="lamp decoration">
+        </div>
+        
+        <div class="header__building-mobile">
+            <div class="building-light"></div>
+            <img src="assets/building.png" alt="building">
+        </div>
         <div class="header__container">
-
             <nav>
                 <div class="nav__content">
                     <div class="nav__logo-name">
@@ -59,11 +67,6 @@
                 </div>
             </nav>
 
-            <div class="lamp-decor">
-                <div class="lamp-light"> </div>
-                <img src="assets/lamp.png" alt="lamp decoration">
-            </div>
-
             <div class="header__content">
                 <div class="header__content__left">
                     <h2>Торговый центр<br>Каренфор</h2>
@@ -78,7 +81,12 @@
                 <div class="header__content__right">
                     <div class="header__right__row top-row">
                         <div class="header__circle-card">
-                            <img src="assets/icons/lamp_icon.png" alt="icon">
+                            <div class="circle-card__front">
+                                <img src="assets/icons/lamp_icon.png" alt="icon">
+                            </div>
+                            <div class="circle-card__back">
+                            </div>
+                            
                         </div>
                         <div class="header__circle-card top-card">
                             <img src="assets/icons/tools_icon.png" alt="icon">
@@ -133,13 +141,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="header__building-mobile">
-                <div class="building-light"></div>
-                <img src="assets/building.png" alt="building">
-            </div>
-
-
         </div>
         <div class="waves-decor">
             <div class="left-bottom-background">
@@ -240,8 +241,6 @@
                             id="path3106-8" sodipodi:nodetypes="sssscccs" />
                     </g>
                 </svg>
-
-                
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
                 <svg width="2157.7981" height="1064.4189" viewBox="0 0 500 281.6275" version="1.1" id="svg5"
@@ -341,15 +340,12 @@
                             id="path3106-8" sodipodi:nodetypes="sssscccs" />
                     </g>
                 </svg> -->
-
-
             </div>
         </div>
 
     </header>
 
     <section id="section__about-us" class="about-us">
-        <!-- Основной слайдер -->
         <div class="slide-text">
             <div class="about-us__text mobile">
                 <h3>О Каренфоре</h3>
@@ -406,16 +402,29 @@
                 </div>
             </div>
             <div class="about-us__text">
-                <h3>О Каренфоре</h3>
-                <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
-                    мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство
-                    такого комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование
-                    начинается с
-                    концептуального замысла, учитывающего местные климатические условия, экологические аспекты и
-                    инфраструктуру. Эстетика и функциональность гармонично переплетаются, создавая удобные потоки для
-                    посетителей и обеспечивая максимальную видимость для
-                    арендаторов.
-                </p>
+                <svg width="961.33301" height="321.33301" viewBox="0 0 254.35266 85.019354"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="waveClip">
+                            <path
+                                d="M 0.00826823,0.01653646 C 50.079575,2.054049 94.720825,14.552082 148.9604,40.74583 c 54.23958,26.193747 88.07804,44.449996 105.30416,44.449996 0,-14.312282 0.0879,-85.19479247 0.0879,-85.19479247 0,0 -243.991789,0.01550293 -254.34419177,0.01550293 z" />
+                        </clipPath>
+                    </defs>
+                    <rect width="254.35266" height="85.019354" style="fill:#fbdcac;" clip-path="url(#waveClip)" />
+                </svg>
+                <div class="text">
+                    <h3>О Каренфоре</h3>
+                    <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
+                        мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство
+                        такого комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование
+                        начинается с
+                        концептуального замысла, учитывающего местные климатические условия, экологические аспекты и
+                        инфраструктуру. Эстетика и функциональность гармонично переплетаются, создавая удобные потоки
+                        для
+                        посетителей и обеспечивая максимальную видимость для
+                        арендаторов.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -458,24 +467,25 @@
         <section class="facts-contacts__facts">
             <div class="facts">
                 <div class="fact">
-                    <div class="fact__name">
-                        +30
+                    <div class="number">
+                        <span class="counter" data-target="30">0</span><span>+</span>
                     </div>
+                    <!-- <div class="counter" data-target="30">0</div> -->
                     <div class="fact__desc">
                         Магазинов
                     </div>
                 </div>
                 <div class="fact">
-                    <div class="fact__name">
-                        20+
+                    <div class="number">
+                        <span class="counter" data-target="20">0</span><span>+</span>
                     </div>
                     <div class="fact__desc">
                         Лет Каренфору
                     </div>
                 </div>
                 <div class="fact">
-                    <div class="fact__name">
-                        8000 м2
+                    <div class="number">
+                        <span class="counter" data-target="8000">0</span><span> м2</span>
                     </div>
                     <div class="fact__desc">
                         Арендная площадь
@@ -514,7 +524,7 @@
                                     placeholder="+7 (___) ___ __ __" required>
 
                                 <div class="custom-select">
-                                    <div class="select-selected">Опция 1</div>
+                                    <div class="select-selected">Тема обращения</div>
                                     <div class="select-items">
                                         <div>Опция 1</div>
                                         <div>Опция 2</div>
@@ -531,11 +541,14 @@
                             <textarea type="text" id="text" placeholder="Текст обращения" required></textarea>
                         </div>
                         <label class="custom-checkbox">
-                            <input type="checkbox" />
+                            <input class="custom-checkbox2" type="checkbox" />
                             <span>Обработка персональных данных</span>
                         </label>
                         <div class="btn-box">
-                            <input type="submit" value="Отправить" class="btn-submit" />
+                            <div class="flip-box">
+                                <input type="submit" value="Отправить" class="btn-submit front">
+                                <div class="btn-submit back">Отправлено</div>
+                            </div>
                         </div>
                     </form>
                 </div>

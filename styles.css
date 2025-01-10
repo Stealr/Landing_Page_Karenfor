@@ -29,7 +29,8 @@ html {
 }
 
 .left-bottom-background {
-    bottom: -20px;
+    bottom: -15px;
+    /* bottom: clamp(-40px, calc(-40px + (100vw - 1920px) * 1, -10px)); */
     position: absolute;
 }
 
@@ -37,11 +38,15 @@ html {
     transform: translateX(-1px);
     width: 100vw;
     height: calc(1064px - (1064px - 55vw) * 1.1);
+
+    /* Повышает фпс для Safari */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 /*------------ Animation ------- -------*/
 
-#path3106 {
+/* #path3106 {
     animation: waveBackPath 11s cubic-bezier(0.24, 0, 0.75, 1) infinite;
 }
 
@@ -49,7 +54,6 @@ html {
     animation: waveForePath 9s cubic-bezier(0.24, 0, 0.75, 1) infinite;
 }
 
-/* Анимация изменения атрибута d */
 @keyframes waveBackPath {
     0%,
     100% {
@@ -70,7 +74,7 @@ html {
     50% {
         d: path("m 61.229133,190.76256 c 9.73323,11.11374 28.188446,26.97384 57.101967,38.35554 50.66535,19.94424 77.71918,14.24766 123.79141,17.77448 55.08504,4.21675 77.70018,16.38843 116.91707,21.55551 54.57691,7.19086 165.06088,-17.24281 164.41718,13.10296 H 1.1306177e-4 L 0,155.44526 c 0,0 33.513896,3.67108 61.229133,35.3173 z");
     }
-}
+} */
 
 /*--------------------------------------*/
 /*------------ Header_Top --------------*/
@@ -95,7 +99,7 @@ header {
     max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
-    
+
 
     /* padding-bottom: 180px; */
 }
@@ -161,7 +165,7 @@ nav {
     border-radius: 0 0 30px 30px;
     margin: auto;
     -webkit-animation: slide-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	animation: slide-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: slide-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 @keyframes slide-bottom {
@@ -169,6 +173,7 @@ nav {
         opacity: 1;
         transform: translateY(-150px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -296,17 +301,15 @@ nav {
 .header__circle-card {
     max-width: 192px;
     max-height: 192px;
-    width: 10vw;
-    height: 10vw;
+    width: 9.7vw;
+    height: 9.7vw;
     background-color: #fff;
     border-radius: 50%;
 
     position: relative;
 
     background-image: conic-gradient(from 160deg, #FADEB2 0%, #FED589 43%, #FFF1DA 70%, #FADEB2 94%);
-	/* -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-     */
+
     transition: transform 1.2s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
 }
 
@@ -321,29 +324,7 @@ nav {
     background-color: transparent;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     z-index: -1;
-    /* Тень остаётся позади элемента */
 }
-
-@-webkit-keyframes flip-vertical-right {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(180deg);
-              transform: rotateY(180deg);
-    }
-  }
-  @keyframes flip-vertical-right {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(180deg);
-              transform: rotateY(180deg);
-    }
-  }
 
 .header__circle-card.top-card {
     margin-bottom: 3.5vw;
@@ -481,6 +462,7 @@ nav {
         top: 0;
         right: 0;
     }
+
     .left-bottom-background svg {
         height: 1064px;
     }
@@ -587,7 +569,7 @@ nav {
     overflow: hidden;
 }
 
-.about-us__text svg{
+.about-us__text svg {
     /* position: absolute;
     top: 0;
     right: 0; */
@@ -623,7 +605,6 @@ nav {
 
 .about-us__text p {
     line-height: 1.65em;
-
 }
 
 /*---------------------------------------*/
@@ -1175,14 +1156,15 @@ select {
 .btn-box {
     position: relative;
     display: flex;
-    perspective: 1000px; /* Глубина 3D */
+    perspective: 1000px;
+    /* Глубина 3D */
     margin-top: 30px;
     width: 100%;
     justify-content: center;
 }
 
 .flip-box {
-    
+
     position: relative;
     min-width: 140px;
     min-height: 40px;
@@ -1191,8 +1173,10 @@ select {
     width: 15vw;
     height: 3.2vw;
 
-    transform-style: preserve-3d; /* Для 3D-эффекта */
-    transition: transform 0.7s ease-in-out; /* Плавный переход */
+    transform-style: preserve-3d;
+    /* Для 3D-эффекта */
+    transition: transform 0.7s ease-in-out;
+    /* Плавный переход */
 }
 
 .flipped {
@@ -1206,7 +1190,8 @@ select {
     left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Скрытие обратной стороны */
+    backface-visibility: hidden;
+    /* Скрытие обратной стороны */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1216,15 +1201,18 @@ select {
 }
 
 .front {
-    background: #ffffff; /* Цвет передней стороны */
+    background: #ffffff;
+    /* Цвет передней стороны */
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
 .back {
-    background: #ecffcd; /* Цвет обратной стороны */
+    background: #ecffcd;
+    /* Цвет обратной стороны */
     color: rgb(0, 0, 0);
-    transform: rotateX(180deg); /* Обратная сторона повернута */
+    transform: rotateX(180deg);
+    /* Обратная сторона повернута */
 }
 
 .btn-submit.front:hover {

@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="scripts.js"></script>
-
 </head>
 
 <body>
@@ -402,37 +400,46 @@
 
                 <div class="contacts_form">
                     <h3>Обратная связь</h3>
-                    <form method="get" class="form">
+                    <form method="get" class="form" id="form">
                         <div class="form__inputs">
                             <div class="inputs__row">
-                                <input type="text" id="name" placeholder="ФИО" required>
-                                <input type="email" id="email" placeholder="Почта" required>
-                            </div>
-                            <div class="inputs__row">
-                                <input type="tel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10"
-                                    placeholder="+7 (___) ___ __ __" required>
+                                <div class="input-container">
+                                    <input type="text" id="name" placeholder="ФИО">
+                                </div>
 
-                                <div class="custom-select">
-                                    <div class="select-selected">Тема обращения</div>
-                                    <div class="select-items">
-                                        <div>Опция 1</div>
-                                        <div>Опция 2</div>
-                                        <div>Опция 3</div>
-                                    </div>
-                                    <select>
-                                        <option value="" selected>Выберите...</option>
-                                        <option value="1">Опция 1</option>
-                                        <option value="2">Опция 2</option>
-                                        <option value="3">Опция 3</option>
-                                    </select>
+                                <div class="input-container">
+                                    <input type="text" id="email" placeholder="Почта">
                                 </div>
                             </div>
-                            <textarea type="text" id="text" placeholder="Текст обращения" required></textarea>
+                            <div class="inputs__row">
+                                <div class="input-container">
+                                    <input type="tel" id="tel" placeholder="+7 (___) ___ __ __">
+                                </div>
+
+                                <div class="input-container">
+                                    <div class="custom-select">
+                                        <div class="select-selected placeholder"><span>Тема обращения</span></div>
+                                        <div class="select-items">
+                                            <div>Жалобы и предложения</div>
+                                            <div>Арендодателям</div>
+                                        </div>
+                                        <select>
+                                            <option value="1">Опция 1</option>
+                                            <option value="2">Опция 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-container-last">
+                                <textarea type="text" id="text" placeholder="Текст обращения"></textarea>
+                            </div>
                         </div>
-                        <label class="custom-checkbox">
-                            <input class="custom-checkbox2" type="checkbox" />
-                            <span>Обработка персональных данных</span>
-                        </label>
+                        <div class="input-container">
+                            <label class="custom-checkbox">
+                                <input class="custom-checkbox2" type="checkbox" />
+                                <span>Обработка персональных данных</span>
+                            </label>
+                        </div>
                         <div class="btn-box">
                             <div class="flip-box">
                                 <input type="submit" value="Отправить" class="btn-submit front">
@@ -452,6 +459,9 @@
         © Торговый Центр «Каренфор» 2024
     </footer>
 
+
+    <script src="scripts-form.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

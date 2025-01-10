@@ -963,8 +963,18 @@ nav {
     height: 2.3rem;
     min-height: 40px;
     border-radius: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding-left: 20px;
+
+    font-family: "Montserrat", serif;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-error {
+    margin-bottom: 8px;
+    border: 2px solid #ff6262 !important;
 }
 
 .inputs__row input:focus-visible {
@@ -992,7 +1002,7 @@ nav {
 .custom-select {
     position: relative;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     user-select: none;
     z-index: 2;
 }
@@ -1015,6 +1025,12 @@ select {
     color: #000000;
     position: relative;
     z-index: 2;
+    font-family: "Montserrat", serif;
+}
+
+.select-selected.placeholder {
+    color: #646464;
+    font-family: "Montserrat", serif;
 }
 
 .select-selected:after {
@@ -1030,14 +1046,14 @@ select {
 
 .select-items {
     color: black;
-    top: 70%;
+    top: 59%;
     overflow: hidden;
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 0 0 0.6rem 0.6rem;
     width: 100%;
     max-height: 0;
-    transition: max-height 0.5s ease, box-shadow 0.5s;
+    transition: max-height 0.5s ease, box-shadow 0.5s ease, top 0.2s ease;
 }
 
 .select-items.active {
@@ -1063,6 +1079,10 @@ select {
     display: block;
 }
 
+/* .select-items.select-error {
+    top: 55%;
+} */
+
 /* #theme {
     border: none;
     border-radius: 15px;
@@ -1077,12 +1097,18 @@ select {
 #text {
     border: none;
 
-    height: 170px;
+    height: 220px;
     border-radius: 15px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 25px 25px;
     resize: none;
 
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+}
+
+.input-container-last {
     grid-column: span 2;
 }
 
@@ -1127,6 +1153,7 @@ select {
 .custom-checkbox {
     display: flex;
     align-items: center;
+    border: none !important;
 }
 
 .custom-checkbox input[type="checkbox"] {

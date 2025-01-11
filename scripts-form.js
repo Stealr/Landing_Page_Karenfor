@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tel: document.getElementById('tel'),
         theme: document.querySelector('.select-selected'),
         text: document.getElementById('text'),
-        checkbox: document.querySelector('.custom-checkbox'),
+        checkbox: document.querySelector('.checkbox'),
     };
 
     let isValid = true;
@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fields.tel.addEventListener('focus', () => {
         if (fields.tel.value.length == 0) fields.tel.value = '+7 ';
+    });
+
+    fields.name.addEventListener('input', function () {
+        validateRequired
     });
 
     // Форматирование номера телефона
@@ -37,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
             output += ') ' + input.substring(4, 7);
         }
         if (input.length >= 8) {
-            output += ' ' + input.substring(7, 9);
+            output += '-' + input.substring(7, 9);
         }
         if (input.length >= 10) {
-            output += ' ' + input.substring(9, 11);
+            output += '-' + input.substring(9, 11);
         }
         return output;
     }
@@ -76,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validateTel() {
         const trimmed = fields.tel.value.replaceAll(' ', '');
-        if (trimmed.length !== 14) {
+        if (trimmed.length !== 16) {
             showError(fields.tel, 'Введите корректный номер телефона');
         } else {
             removeError(fields.tel);
@@ -86,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateRequired(input, errmsg) {
         const trimmed = input.value.replaceAll(' ', '');
         if (trimmed.length == 0) {
-            showError(input, errmsg);
+            input.classList.add('input-error');
         } else {
             removeError(input);
         }
@@ -94,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validateSelect() {
         if (fields.theme.classList.contains('placeholder')) {
-            showError(fields.theme, 'Выберите тему обращения')
+            showError(fields.theme)
             document.querySelector('.select-items').classList.add('select-error');
         }
     }
@@ -105,11 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     fields.name.addEventListener('blur', function () {
-        validateRequired(fields.name, 'Введите ФИО');
+        validateRequired(fields.name);
     });
 
     fields.text.addEventListener('blur', function () {
-        validateRequired(fields.text, 'Введите текст обращения');
+        validateRequired(fields.text);
     })
 
     fields.email.addEventListener('blur', () => validateField(fields.email, regexes.email, 'Введите корректную почту'));
@@ -123,11 +127,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelectorAll('.error-message').forEach(msg => msg.remove());
 
-        validateRequired(fields.name, 'Введите ФИО');
+        validateRequired(fields.name);
         validateField(fields.email, regexes.email, 'Введите корректную почту');
         validateTel();
         validateSelect();
-        validateRequired(fields.text, 'Введите текст обращения');
+        validateRequired(fields.text);
         if (!fields.checkbox.querySelector('input').checked) {
             showError(fields.checkbox, 'Необходимо согласие на обработку данных');
         }
@@ -172,6 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
     selectSelected.addEventListener('click', () => {
         selectItems.classList.toggle('active');
         selectSelected.classList.toggle('active');
+        removeError(fields.theme);
+        selectItems.classList.remove('select-error');
     });
 
     selectItems.addEventListener('click', (e) => {
@@ -195,4 +201,60 @@ document.addEventListener('DOMContentLoaded', function () {
             selectSelected.classList.remove('active');
         }
     });
+
+
+    // ---------Privacy Policy---------
+
+    const btnPolicy = document.getElementById('privacy-policy');
+    const btnClose = document.getElementById('closeModal');
+    const blackout = document.querySelector('.blackout');
+    const privacyPolicy = document.querySelector('.privacy-policy');
+    document.addEventListener('click', (e) => {
+        if (!privacyPolicy.contains(e.target) && e.target != btnPolicy) {
+            blackout.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.body.style.touchAction = 'auto';
+        }
+    });
+
+    btnPolicy.addEventListener('click', function () {
+        blackout.classList.add('active');
+
+        // const viewportmeta = document.querySelector('meta[name=viewport]');
+        // viewportmeta.setAttribute('content', "width=device-width, initial-scale=0, minimum-scale=0.5, maximum-scale=1");
+
+
+        
+        document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
+    });
+
+    btnClose.addEventListener('click', function () {
+        blackout.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        document.body.style.touchAction = 'auto';
+    });
+
+    // let viewportmeta = document.querySelector('meta[name="viewport"]');
+    // if (viewportmeta === null) {
+    //     viewportmeta = document.createElement("meta");
+    //     viewportmeta.setAttribute("name", "viewport");
+    //     document.head.appendChild(viewportmeta);
+
+    //     viewportmeta = document.querySelector('meta[name="viewport"]');
+    // }
+    // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+    // console.log(document.querySelector('meta[name="viewport"]'));
+
+    function setZoom(scale) {
+        let meta = document.querySelector('meta[name="viewport"]');
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = 'viewport';
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`);
+    }
+    setZoom(1.0);
+
 });

@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Каренфор</title>
 
+    <link rel="icon" type="image/png" href="/assets/logo/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/logo/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Каренфор" />
+    <link rel="manifest" href="/assets/logo/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -20,7 +27,8 @@
 <body>
     <header>
         <div class="top-right-wave">
-            <svg width="500" height="225" viewBox="0 0 132.29165 59.531247" version="1.1" id="svg5" xml:space="preserve"
+            <img src="assets/svg/top-right-wave.png" />
+            <!-- <svg width="500" height="225" viewBox="0 0 132.29165 59.531247" version="1.1" id="svg5" xml:space="preserve"
                 sodipodi:docname="top-right-wave.svg" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
                 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +39,7 @@
                         d="m 4.5149611,0.00185208 c 0,0 20.2815999,35.05254492 60.8038199,39.28855692 44.655529,4.66809 66.977719,16.276712 66.977719,16.276712 V 0.00185208 Z"
                         id="path11737" sodipodi:nodetypes="csccc" />
                 </g>
-            </svg>
+            </svg> -->
         </div>
         <div class="address">
             <div class="address__metro">
@@ -79,12 +87,7 @@
                 <div class="header__content__right">
                     <div class="header__right__row top-row">
                         <div class="header__circle-card">
-                            <div class="circle-card__front">
-                                <img src="assets/icons/lamp_icon.png" alt="icon">
-                            </div>
-                            <div class="circle-card__back">
-                            </div>
-
+                            <img src="assets/icons/lamp_icon.png" alt="icon">
                         </div>
                         <div class="header__circle-card top-card">
                             <img src="assets/icons/tools_icon.png" alt="icon">
@@ -142,8 +145,39 @@
         </div>
         <div class="waves-decor">
             <div class="left-bottom-background">
-
-                <svg width="2157.7981" height="1064.4189" viewBox="0 0 500 281.6275" version="1.1" id="svg5"
+                <svg xmlns="http://www.w3.org/2000/svg" width="2157.8" height="1064.42" preserveAspectRatio="none"
+                    viewBox="0 0 500 281.63">
+                    <defs>
+                        <filter id="b" width="1.04" height="1.17" x="-.02" y="-.09" color-interpolation-filters="sRGB">
+                            <feFlood flood-color="#000" flood-opacity=".3" result="flood" />
+                            <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+                            <feGaussianBlur in="composite1" result="blur" stdDeviation="4.36" />
+                            <feOffset dy="-2.02" result="offset" />
+                            <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+                        </filter>
+                        <filter id="a" width="1.04" height="1.13" x="-.02" y="-.07" color-interpolation-filters="sRGB">
+                            <feFlood flood-color="#000" flood-opacity=".3" result="flood" />
+                            <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+                            <feGaussianBlur in="composite1" result="blur" stdDeviation="4.36" />
+                            <feOffset dy="-2.02" result="offset" />
+                            <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+                        </filter>
+                    </defs>
+                    <path fill="#ffd088"
+                        d="m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z"
+                        filter="url(#a)" paint-order="stroke fill markers">
+                        <animate attributeName="d" dur="11s" keySplines="0.42 0 0.58 1 0.58 0" keyTimes="0; 0.5; 1"
+                            repeatCount="indefinite"
+                            values="m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z; m 55.072026,144.21671 c 20.97583,20.49787 47.372724,47.14408 72.846664,56.54141 51.08438,18.84506 64.61671,15.97913 110.68894,19.50595 55.08504,4.21675 102.65051,32.66717 155.43035,35.60919 44.25734,2.46696 80.44047,-17.51156 132.25996,-15.22204 35.32693,1.56083 44.61943,40.9763 44.61943,40.9763 H 0.0374 L 0,121.38133 c 0,0 40.398525,8.49623 55.072026,22.83538 z; m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z" />
+                    </path>
+                    <path fill="#fbdcac"
+                        d="m 59.019581,187.90533 c 21.678017,3.77289 41.748169,8.60705 70.661689,19.98875 50.66535,19.94424 65.90557,47.11335 111.9778,50.64017 55.08504,4.21675 80.10682,3.3292 118.5391,5.94509 41.9124,2.85276 163.25859,17.07171 163.25859,17.07171 H 1.1306177e-4 L 0,144.33276 c 0,0 17.263637,36.30528 59.019581,43.57257 z"
+                        filter="url(#b)" paint-order="stroke fill markers">
+                        <animate attributeName="d" dur="9s" repeatCount="indefinite"
+                            values="m 59.019581,187.90533 c 21.678017,3.77289 41.748169,8.60705 70.661689,19.98875 50.66535,19.94424 65.90557,47.11335 111.9778,50.64017 55.08504,4.21675 80.10682,3.3292 118.5391,5.94509 41.9124,2.85276 163.25859,17.07171 163.25859,17.07171 H 1.1306177e-4 L 0,144.33276 c 0,0 17.263637,36.30528 59.019581,43.57257 z; m 61.229133,190.76256 c 9.73323,11.11374 28.188446,26.97384 57.101967,38.35554 50.66535,19.94424 77.71918,14.24766 123.79141,17.77448 55.08504,4.21675 77.70018,16.38843 116.91707,21.55551 54.57691,7.19086 165.06088,-17.24281 164.41718,13.10296 H 1.1306177e-4 L 0,155.44526 c 0,0 33.513896,3.67108 61.229133,35.3173 z; m 59.019581,187.90533 c 21.678017,3.77289 41.748169,8.60705 70.661689,19.98875 50.66535,19.94424 65.90557,47.11335 111.9778,50.64017 55.08504,4.21675 80.10682,3.3292 118.5391,5.94509 41.9124,2.85276 163.25859,17.07171 163.25859,17.07171 H 1.1306177e-4 L 0,144.33276 c 0,0 17.263637,36.30528 59.019581,43.57257 z" />
+                    </path>
+                </svg>
+                <!-- <svg width="2157.7981" height="1064.4189" viewBox="0 0 500 281.6275" version="1.1" id="svg5"
                     preserveAspectRatio="none">
                     <defs id="defs2">
                         <filter style="color-interpolation-filters:sRGB;" inkscape:label="Drop Shadow" id="filter10658"
@@ -177,11 +211,12 @@
                             style="display:inline;fill:#ffd088;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter10750)"
                             d="m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z"
                             id="path3106">
-                            <animate attributeName="d" dur="11s" repeatCount="indefinite"
+                            <animate attributeName="d" dur="11s" repeatCount="indefinite" keyTimes="0; 0.5; 1"
+                                keySplines="0.42 0 0.58 1 0.58 0"
                                 values="
-                m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z;
-                m 55.072026,144.21671 c 20.97583,20.49787 47.372724,47.14408 72.846664,56.54141 51.08438,18.84506 64.61671,15.97913 110.68894,19.50595 55.08504,4.21675 102.65051,32.66717 155.43035,35.60919 44.25734,2.46696 80.44047,-17.51156 132.25996,-15.22204 35.32693,1.56083 44.61943,40.9763 44.61943,40.9763 H 0.0374 L 0,121.38133 c 0,0 40.398525,8.49623 55.072026,22.83538 z;
-                m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z" />
+                                m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z;
+                                m 55.072026,144.21671 c 20.97583,20.49787 47.372724,47.14408 72.846664,56.54141 51.08438,18.84506 64.61671,15.97913 110.68894,19.50595 55.08504,4.21675 102.65051,32.66717 155.43035,35.60919 44.25734,2.46696 80.44047,-17.51156 132.25996,-15.22204 35.32693,1.56083 44.61943,40.9763 44.61943,40.9763 H 0.0374 L 0,121.38133 c 0,0 40.398525,8.49623 55.072026,22.83538 z;
+                                m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z" />
                         </path>
 
                         <path
@@ -194,8 +229,9 @@
                 m 61.229133,190.76256 c 9.73323,11.11374 28.188446,26.97384 57.101967,38.35554 50.66535,19.94424 77.71918,14.24766 123.79141,17.77448 55.08504,4.21675 77.70018,16.38843 116.91707,21.55551 54.57691,7.19086 165.06088,-17.24281 164.41718,13.10296 H 1.1306177e-4 L 0,155.44526 c 0,0 33.513896,3.67108 61.229133,35.3173 z;
                 m 59.019581,187.90533 c 21.678017,3.77289 41.748169,8.60705 70.661689,19.98875 50.66535,19.94424 65.90557,47.11335 111.9778,50.64017 55.08504,4.21675 80.10682,3.3292 118.5391,5.94509 41.9124,2.85276 163.25859,17.07171 163.25859,17.07171 H 1.1306177e-4 L 0,144.33276 c 0,0 17.263637,36.30528 59.019581,43.57257 z" />
                         </path>
-
-                        <!-- <path
+                    </g>
+                </svg> -->
+                <!-- <path
                                     style="display:inline;fill:#ffd088;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter10750)"
                                     d="m 47.177157,158.7195 c 20.355754,8.35551 57.233783,13.18407 82.707723,22.5814 51.08438,18.84506 78.73067,57.93986 124.72974,62.54641 55.31676,5.53967 97.85902,-6.09823 148.52821,-0.91755 42.68051,4.36387 72.79379,11.87371 124.61328,14.16323 35.32693,1.56083 43.16126,24.53453 43.16126,24.53453 H 0.0374 L 0,106.43237 c 0,0 9.1575707,36.01195 47.177157,52.28713 z"
                                     id="path3106" sodipodi:nodetypes="cssascccc" />
@@ -204,8 +240,7 @@
                                     style="display:inline;fill:#fbdcac;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter10658)"
                                     d="m 59.019581,187.90533 c 21.678017,3.77289 41.748169,8.60705 70.661689,19.98875 50.66535,19.94424 65.90557,47.11335 111.9778,50.64017 55.08504,4.21675 80.10682,3.3292 118.5391,5.94509 41.9124,2.85276 163.25859,17.07171 163.25859,17.07171 H 1.1306177e-4 L 0,144.33276 c 0,0 17.263637,36.30528 59.019581,43.57257 z"
                                     id="path3106-8" sodipodi:nodetypes="sssscccs" /> -->
-                    </g>
-                </svg>
+
 
                 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
@@ -235,7 +270,7 @@
     <section id="section__about-us" class="about-us">
         <div class="slide-text">
             <div class="about-us__text mobile">
-                <h3>О Каренфоре</h3>
+                <!-- <h3>О Каренфоре</h3> -->
                 <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
                     мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство
                     такого комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование
@@ -300,7 +335,7 @@
                     <rect width="254.35266" height="85.019354" style="fill:#fbdcac;" clip-path="url(#waveClip)" />
                 </svg>
                 <div class="text">
-                    <h3>О Каренфоре</h3>
+                    <!-- <h3>О Каренфоре</h3> -->
                     <p>Современный торговый центр – это не просто пространство для покупок, а многогранный
                         мир, в котором архитектурная мастерская и дизайнерская мысль соединяются воедино. Строительство
                         такого комплекса требует высокой квалификации и значительных объемов ресурсов. Проектирование
@@ -351,105 +386,113 @@
         </div>
     </section>
     <div class="facts-contacts">
-        <section class="facts-contacts__facts">
-            <div class="facts">
-                <div class="fact">
-                    <div class="number">
-                        <span class="counter" data-target="30">0</span><span>+</span>
-                    </div>
-                    <!-- <div class="counter" data-target="30">0</div> -->
-                    <div class="fact__desc">
-                        Магазинов
-                    </div>
-                </div>
-                <div class="fact">
-                    <div class="number">
-                        <span class="counter" data-target="20">0</span><span>+</span>
-                    </div>
-                    <div class="fact__desc">
-                        Лет Каренфору
-                    </div>
-                </div>
-                <div class="fact">
-                    <div class="number">
-                        <span class="counter" data-target="8000">0</span><span> м2</span>
-                    </div>
-                    <div class="fact__desc">
-                        Арендная площадь
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section__contacts" class="contacts">
-            <div class="contacts__content">
-                <div class="contacts__info">
-                    <div class="info__block">
-                        <img src="assets/phone.png" alt="phone">
-                        +7 (495) 315-08-66
-                    </div>
-                    <div class="info__block">
-                        <img src="assets/calendar.png" alt="calendar">
-                        С 09:00 до 21:00 без выходных
-                    </div>
-                    <div class="info__block">
-                        <img src="assets/map-flag.png" alt="map-flag">
-                        Кировоградская ул., 13, Москва
-                    </div>
-                </div>
-
-                <div class="contacts_form">
-                    <h3>Обратная связь</h3>
-                    <form method="get" class="form" id="form">
-                        <div class="form__inputs">
-                            <div class="inputs__row">
-                                <div class="input-container">
-                                    <input type="text" id="name" placeholder="ФИО">
-                                </div>
-
-                                <div class="input-container">
-                                    <input type="text" id="email" placeholder="Почта">
-                                </div>
+        <div class="container">
+            <div class="box fact" style="--img:url(assets/img-facts-b.png)">
+                <section class="facts-contacts__facts">
+                    <div class="facts">
+                        <div class="fact">
+                            <div class="number">
+                                <span class="counter" data-target="30">0</span><span>+</span>
                             </div>
-                            <div class="inputs__row">
-                                <div class="input-container">
-                                    <input type="tel" id="tel" placeholder="+7 (___) ___ __ __">
-                                </div>
+                            <div class="fact__desc">
+                                Магазинов
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="number">
+                                <span class="counter" data-target="20">0</span><span>+</span>
+                            </div>
+                            <div class="fact__desc">
+                                Лет Каренфору
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="number">
+                                <span class="counter" data-target="8000">0</span><span> м2</span>
+                            </div>
+                            <div class="fact__desc">
+                                Арендная площадь
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="box" style="--img:url(assets/img-contacts-b.png)">
+                <section id="section__contacts" class="contacts">
+                    <div class="contacts__content">
+                        <div class="contacts__info">
+                            <div class="info__block">
+                                <img src="assets/phone.png" alt="phone">
+                                <a href="tel:+74953150866">+7 (495) 315-08-66</a>
+                            </div>
+                            <div class="info__block">
+                                <img src="assets/calendar.png" alt="calendar">
+                                С 09:00 до 21:00 без выходных
+                            </div>
+                            <div class="info__block">
+                                <img src="assets/map-flag.png" alt="map-flag">
+                                Кировоградская ул., 13, Москва
+                            </div>
+                        </div>
 
-                                <div class="input-container">
-                                    <div class="custom-select">
-                                        <div class="select-selected placeholder"><span>Тема обращения</span></div>
-                                        <div class="select-items">
-                                            <div>Жалобы и предложения</div>
-                                            <div>Арендодателям</div>
+                        <div class="contacts_form">
+                            <h3>Обратная связь</h3>
+                            <form method="get" class="form" id="form">
+                                <div class="form__inputs">
+                                    <div class="inputs__row">
+                                        <div class="input-container">
+                                            <input type="text" id="name" placeholder="ФИО">
                                         </div>
-                                        <select>
-                                            <option value="1">Опция 1</option>
-                                            <option value="2">Опция 2</option>
-                                        </select>
+                                        <div class="input-container">
+                                            <input type="text" id="email" placeholder="Почта">
+                                        </div>
+                                    </div>
+                                    <div class="inputs__row">
+                                        <div class="input-container">
+                                            <input type="tel" id="tel" placeholder="+7 (___) ___ __ __">
+                                        </div>
+                                        <div class="input-container">
+                                            <div class="custom-select">
+                                                <div class="select-selected placeholder"><span>Тема обращения</span>
+                                                </div>
+                                                <div class="select-items">
+                                                    <div>Жалобы и предложения</div>
+                                                    <div>Арендодателям</div>
+                                                </div>
+                                                <select>
+                                                    <option value="1">Опция 1</option>
+                                                    <option value="2">Опция 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-container-last">
+                                        <textarea type="text" id="text" placeholder="Текст обращения"></textarea>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="input-container-last">
-                                <textarea type="text" id="text" placeholder="Текст обращения"></textarea>
-                            </div>
+                                <div class="input-container">
+                                    <div class="checkbox">
+                                        <label class="custom-checkbox">
+                                            <input class="custom-checkbox2" type="checkbox" />
+                                            <span class="check-mark"></span>
+                                        </label>
+                                        <span class="checkbox-text">Даю согласие на <a id="privacy-policy">обработку
+                                                персональных данных</a></span>
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <div class="flip-box">
+                                        <input type="submit" value="Отправить" class="btn-submit front">
+                                        <div class="btn-submit back">Отправлено</div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="input-container">
-                            <label class="custom-checkbox">
-                                <input class="custom-checkbox2" type="checkbox" />
-                                <span>Обработка персональных данных</span>
-                            </label>
-                        </div>
-                        <div class="btn-box">
-                            <div class="flip-box">
-                                <input type="submit" value="Отправить" class="btn-submit front">
-                                <div class="btn-submit back">Отправлено</div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </div>
 
     <footer>
@@ -458,6 +501,80 @@
         </div>
         © Торговый Центр «Каренфор» 2024
     </footer>
+
+    <div class="blackout">
+        <div class="privacy-policy">
+            <div class="privacy-policy__content">
+                <span id="closeModal" class="close">&times;</span>
+                <h1>Политика обработки персональных данных</h1>
+                <div class="scrollable-text">
+                    <div class="paragraph">
+                        <h3>1. Общие положения</h3>
+                        <p>Настоящая Политика обработки персональных данных (далее — Политика) разработана в
+                            соответствии с
+                            Федеральным законом № 152-ФЗ «О персональных данных» от 27 июля 2006 года и определяет
+                            станавливает порядок обработки персональных данных пользователей, собираемых через форму
+                            обратной связи на сайте Торгового центра "Каренфор", расположенного по адресу
+                            https://Здесь должен быть адрес.ru/.</p>
+                    </div>
+                    <div class="paragraph">
+                        <h3>2. Сбор персональных данных</h3>
+                        <p>Персональные данные пользователей собираются при заполнении формы обратной связи на сайте,
+                            где
+                            пользователь самостоятельно предоставляет следующую информацию:</p>
+                        <ul>
+                            <li>ФИО;</li>
+                            <li>Телефон;</li>
+                            <li>Электронная почта;</li>
+                            <li>Тема обращения (выбор из предложенных вариантов);</li>
+                            <li>Текст обращения.</li>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <h3>3. Цели обработки персональных данных</h3>
+                        <p>Персональные данные обрабатываются в целях:</p>
+                        <ul>
+                            <li>обеспечения связи с пользователем, включая отправку уведомлений, запросов, касающихся
+                                использования сайта, услуг, обработку запросов и заявок от пользователя;</li>
+                            <li>улучшения качества обслуживания, удовлетворенности услугами.</li>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <h3>4. Принципы и условия обработки персональных данных</h3>
+                        <p>4.1. Обработка персональных данных осуществляется на основе принципов:</p>
+                        <ul>
+                            <li>законности и справедливой основы;</li>
+                            <li>ограничения обработки достижением конкретных, заранее определенных целей;</li>
+                            <li>недопущения обработки данных, несовместимой с целями сбора;</li>
+                            <li>точности, достаточности и актуальности данных.</li>
+                        </ul>
+                        <p>4.2. Персональные данные не подлежат разглашению третьим лицам, за исключением случаев,
+                            предусмотренных законодательством РФ.</p>
+                    </div>
+                    <div class="paragraph">
+                        <h3>5. Права субъекта персональных данных</h3>
+                        <p>Пользователь имеет право на получение информации о своих персональных данных, их исправление,
+                            удаление или обновление, а также право требовать прекращения их обработки, если считает, что
+                            обработка осуществляется с нарушением требований законодательства РФ.</p>
+                    </div>
+                    <div class="paragraph">
+                        <h3>6. Права субъекта персональных данных</h3>
+                        <p>Оператор принимает все необходимые меры для защиты персональных данных от неправомерного
+                            доступа,
+                            изменения, раскрытия или уничтожения, включая, но не ограничиваясь, использованием
+                            современных
+                            технологий шифрования, регулярными проверками систем безопасности и ограниченным доступом к
+                            данным.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Эта политика обработки персональных данных отражает ключевые аспекты и принципы, которыми
+                            руководствуется Торговый центр "Каренфор" при работе с данными пользователей, собранными
+                            через форму обратной связи на официальном сайте.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="scripts-form.js"></script>

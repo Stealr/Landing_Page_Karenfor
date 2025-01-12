@@ -4,8 +4,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 /*------------------------------------------------------------------*/
 /*--------------------------- Header -------------------------------*/
 /*------------------------------------------------------------------*/
@@ -46,7 +44,37 @@ html {
     -webkit-transform: translate3d(0, 0, 0);
 }
 
-/*------------ Animation ------- -------*/
+/*-------------- Mobile ----------------*/
+
+.waves-decor-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 1030px;
+    /* top: calc((100vw - 1920px)*0.40); */
+    bottom: 0;
+    z-index: -50;
+}
+
+.left-bottom-background-mobile {
+    bottom: -15px;
+    /* bottom: clamp(-40px, calc(-40px + (100vw - 1920px) * 1, -10px)); */
+    position: absolute;
+}
+
+.left-bottom-background-mobile svg {
+    transform: translateX(-1px);
+    width: 100vw;
+    height: calc(100px + (100vw - 80px));
+    ;
+
+    /* Повышает фпс для Safari */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+
+/*------------ Animation ---------------*/
 
 /* #path3106 {
     animation: waveBackPath 11s cubic-bezier(0.24, 0, 0.75, 1) infinite;
@@ -142,7 +170,7 @@ header {
 }
 
 .lamp-decor img {
-    max-width: 364px;
+    max-width: 324px;
     width: 20vw;
     height: auto;
 }
@@ -245,9 +273,14 @@ nav {
 .header__content {
     display: flex;
     justify-content: end;
+    margin-left: 20px;
     margin-top: 41px;
     margin-right: 7.5vw;
     /* padding-bottom: 100px; */
+}
+
+.header__content p {
+    line-height: 1.22rem;
 }
 
 .header__content__left {
@@ -256,7 +289,7 @@ nav {
 }
 
 .header__content__left h2 {
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 800;
     margin-bottom: 1.56vw;
     line-height: 1.22em;
@@ -303,6 +336,8 @@ nav {
 .header__circle-card {
     max-width: 192px;
     max-height: 192px;
+    min-width: 100px;
+    min-height: 100px;
     width: 9.7vw;
     height: 9.7vw;
     background-color: #fff;
@@ -372,7 +407,7 @@ nav {
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    margin: 0 25px;
+    margin: 0 10px;
 }
 
 .header__square-card {
@@ -508,7 +543,6 @@ nav {
 
 @media (max-width: 800px) {
     header {
-
         margin-bottom: 0;
     }
 
@@ -522,7 +556,7 @@ nav {
     }
 
     .lamp-decor {
-        transform: translateY(-120px);
+        transform: translateY(-200px);
     }
 
     .address {
@@ -534,7 +568,8 @@ nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
+        margin: 8vw;
+        padding-bottom: calc(40px + (100vw - 800px) * 0.2);
     }
 
     .header__content__right {
@@ -558,6 +593,23 @@ nav {
     .waves-decor {
         display: none;
     }
+
+    .waves-decor-mobile {
+        display: block;
+    }
+
+    .header__circle-card {
+        min-width: 100px;
+        min-height: 100px;
+        width: 16vw;
+        height: 16vw;
+    }
+
+    .header__content__left {
+        margin-top: 3vw;
+        margin-right: 0;
+    }
+
 }
 
 /*-------------------------------------------------------------------*/
@@ -581,6 +633,7 @@ nav {
 
 .slide-text {
     display: flex;
+    overflow: hidden;
 }
 
 .about-us__text.mobile {
@@ -591,12 +644,21 @@ nav {
 .about-us__text {
     /* padding: 35px; */
     position: relative;
+    background-color: #000000;
+}
+
+.about-us__back {
     background: linear-gradient(180deg, #FFBF41, #FFA807);
+    height: 100%;
+    border-radius: 0 0 0 calc((1790px - 100vw) * 0.15);
 }
 
 .about-us__text .text {
+
     padding: 35px;
     padding-top: 75px;
+    padding-right: calc((1800px - 100vw) * 0.6);
+    /* width: 80%; */
 }
 
 /* .about-us__text h3 {
@@ -609,6 +671,10 @@ nav {
     line-height: 1.65em;
 }
 
+.about-us__text p:last-child {
+    margin-top: 15px;
+}
+
 /*---------------------------------------*/
 /*--------------- Slider ----------------*/
 /*---------------------------------------*/
@@ -616,11 +682,16 @@ nav {
 .container-main-slider {
     max-width: 45vw;
     background: linear-gradient(to bottom, #fbdcac 50%, rgb(0, 0, 0) 50%);
+    background-color: #5f5f5fb9;
 }
 
 .main-slider {
     max-height: 40.5vw;
     border-radius: 2.5rem 0 0 2.5rem;
+}
+
+.wave-test {
+    transform: translateY(-2px);
 }
 
 /*Нужно чтобы убрать просвечивание правой картинки в слайдере при увеличенном масштабе*/
@@ -797,6 +868,14 @@ nav {
     footer {
         font-size: 11px;
     }
+
+    .about-us__text {
+        background: linear-gradient(180deg, #FFBF41, #FFA807);
+    }
+
+    .about-us__back {
+        background-color: #000000;
+    }
 }
 
 @media (max-width: 800px) {
@@ -834,6 +913,48 @@ nav {
         /* Еще меньше миниатюры */
     }
 }
+
+/*---------------------------------------*/
+/*---------- Бегущая строка -------------*/
+/*---------------------------------------*/
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    /* background: linear-gradient(90deg, #7ac07f, #c04121); */
+    /* background: linear-gradient(90deg, #4a7f88, #FFA807); */
+    background: linear-gradient(90deg, #d4c38b, #ce5631);
+    border: none;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    padding: 1.5rem 0;
+}
+
+.marquee-content span {
+    display: inline-block;
+    padding: 0 70px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #FFD900;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
 /*---------------------------------------*/
 /*--------------- Facts -----------------*/
@@ -975,6 +1096,12 @@ nav {
 .info__block a {
     color: #fff;
     text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.info__block a:hover {
+    text-decoration: underline;
+    color: #dddddd;
 }
 
 .info__block img {
@@ -1518,5 +1645,9 @@ footer .nav__logo {
 @media (max-width: 400px) {
     html {
         font-size: 14px;
+    }
+
+    .header__content {
+        margin: 30px 10px;
     }
 }

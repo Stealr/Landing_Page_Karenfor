@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const svgElement = document.querySelector('svg');
+
+  const paths = svgElement.querySelectorAll('path');
+
+  function isSafari() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return (
+      userAgent.includes("safari") &&
+      !userAgent.includes("chrome") &&
+      !userAgent.includes("edge")
+    );
+  }
+
+  if (isSafari()) {
+    paths.forEach(path => {
+      const style = path.getAttribute('style');
+      if (style) {
+        const updatedStyle = style.replace(/filter:url\(#\w+\);?/g, '');
+        path.setAttribute('style', updatedStyle);
+      }
+    });
+  }
+
+
   function animateCounter(counterElement) {
     const target = +counterElement.getAttribute('data-target');
     const duration = 2500;
@@ -72,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       disableOnInteraction: true,
     },
     loop: true,
-    
+
     navigation: {
       nextEl: '.swiper-button.next',
       prevEl: '.swiper-button.prev',

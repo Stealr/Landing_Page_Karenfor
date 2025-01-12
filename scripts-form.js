@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     const form = document.querySelector('.form');
     const fields = {
         name: document.getElementById('name'),
@@ -8,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         text: document.getElementById('text'),
         checkbox: document.querySelector('.checkbox'),
     };
-
     let isValid = true;
 
     // Регулярные выражения для проверки
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateRequired(input, errmsg) {
         const trimmed = input.value.replaceAll(' ', '');
         if (trimmed.length == 0) {
+            isValid = false;
             input.classList.add('input-error');
         } else {
             removeError(input);
@@ -220,11 +221,6 @@ document.addEventListener('DOMContentLoaded', function () {
     btnPolicy.addEventListener('click', function () {
         blackout.classList.add('active');
 
-        // const viewportmeta = document.querySelector('meta[name=viewport]');
-        // viewportmeta.setAttribute('content', "width=device-width, initial-scale=0, minimum-scale=0.5, maximum-scale=1");
-
-
-        
         document.body.style.overflow = 'hidden';
         document.body.style.touchAction = 'none';
     });
@@ -246,15 +242,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
     // console.log(document.querySelector('meta[name="viewport"]'));
 
-    function setZoom(scale) {
-        let meta = document.querySelector('meta[name="viewport"]');
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'viewport';
-            document.head.appendChild(meta);
-        }
-        meta.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`);
-    }
-    setZoom(1.0);
+    // function setZoom(scale) {
+    //     let meta = document.querySelector('meta[name="viewport"]');
+    //     if (!meta) {
+    //         meta = document.createElement('meta');
+    //         meta.name = 'viewport';
+    //         document.head.appendChild(meta);
+    //     }
+    //     meta.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`);
+    // }
+    // setZoom(1.0);
 
 });

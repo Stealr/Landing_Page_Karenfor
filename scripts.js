@@ -43,22 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(updateCounter);
   }
 
-  // Intersection Observer для отслеживания появления
   const counters = document.querySelectorAll('.counter');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         animateCounter(entry.target);
-        observer.unobserve(entry.target); // Прекращаем наблюдение
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 1 }); // Активация, когда элемент наполовину виден
+  }, { threshold: 1 });
 
   counters.forEach(counter => observer.observe(counter));
 
-  // observer.observe(document.querySelector('.facts'));
-
-  // Инициализация слайдера миниатюр
   var thumbnailSwiper = new Swiper('.thumbnail-slider', {
     breakpoints: {
       400: {
@@ -88,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     watchSlidesProgress: true,
   });
 
-  // Инициализация основного слайдера
   var mainSwiper = new Swiper('.main-slider', {
     spaceBetween: 0,
     autoplay: {
@@ -102,11 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: '.swiper-button.prev',
     },
     pagination: {
-      el: '.swiper-pagination', // Селектор для контейнера точек
-      clickable: true, // Делает точки кликабельными
+      el: '.swiper-pagination',
+      clickable: true,
     },
     thumbs: {
-      swiper: thumbnailSwiper, // Привязка миниатюр
+      swiper: thumbnailSwiper,
     },
   });
 });

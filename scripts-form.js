@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     let isValid = true;
 
-    // Регулярные выражения для проверки
     const regexes = {
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     };
@@ -24,14 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
         validateRequired
     });
 
-    // Форматирование номера телефона
     fields.tel.addEventListener('input', function () {
-        const input = tel.value.replace(/\D/g, ''); // Удаляем все нечисловые символы
+        const input = tel.value.replace(/\D/g, ''); 
         const formatted = formatPhoneNumber(input);
         fields.tel.value = formatted;
     });
 
-    // Функция для форматирования номера телефона
     function formatPhoneNumber(input) {
         let output = '+7 ';
         if (input.length > 1) {
@@ -49,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return output;
     }
 
-    // Отображение ошибки
     function showError(input, message) {
         removeError(input);
 
@@ -63,14 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false;
     }
 
-    // Удаление предыдущей ошибки
     function removeError(input) {
         input.classList.remove('input-error');
         const error = input.parentNode.querySelector('.error-message');
         if (error) error.remove();
     }
 
-    // Валидация поля почты
     function validateField(input, regex, errorMessage) {
         removeError(input);
         if (!regex.test(input.value.trim())) {
@@ -104,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ----------- Blur -----------
     fields.tel.addEventListener('blur', function () {
         validateTel();
     });
@@ -118,9 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     fields.email.addEventListener('blur', () => validateField(fields.email, regexes.email, 'Введите корректную почту'));
-    // -----------------------------
 
-    // Обработчик отправки формы
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -203,9 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
-    // ---------Privacy Policy---------
-
     const btnPolicy = document.getElementById('privacy-policy');
     const btnClose = document.getElementById('closeModal');
     const blackout = document.querySelector('.blackout');
@@ -230,27 +218,4 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = 'auto';
         document.body.style.touchAction = 'auto';
     });
-
-    // let viewportmeta = document.querySelector('meta[name="viewport"]');
-    // if (viewportmeta === null) {
-    //     viewportmeta = document.createElement("meta");
-    //     viewportmeta.setAttribute("name", "viewport");
-    //     document.head.appendChild(viewportmeta);
-
-    //     viewportmeta = document.querySelector('meta[name="viewport"]');
-    // }
-    // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
-    // console.log(document.querySelector('meta[name="viewport"]'));
-
-    // function setZoom(scale) {
-    //     let meta = document.querySelector('meta[name="viewport"]');
-    //     if (!meta) {
-    //         meta = document.createElement('meta');
-    //         meta.name = 'viewport';
-    //         document.head.appendChild(meta);
-    //     }
-    //     meta.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`);
-    // }
-    // setZoom(1.0);
-
 });

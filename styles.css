@@ -52,14 +52,14 @@ html {
 }
 
 .left-bottom-background-mobile {
-    bottom: -15px;
+    bottom: -5px;
     position: absolute;
 }
 
 .left-bottom-background-mobile svg {
     transform: translateX(-1px);
     width: 100vw;
-    height: calc(100px + (100vw - 80px));
+    height: calc(100px + (100vw - 60px));
 
     /* Повышает фпс для Safari */
     transform: translate3d(0, 0, 0);
@@ -253,8 +253,8 @@ nav {
 }
 
 .header__right__row-b img {
-    max-width: 626px;
-    width: 33vw;
+    max-width: 576px;
+    width: 31vw;
     height: auto;
 }
 
@@ -389,7 +389,7 @@ nav {
 }
 
 .header__building-mobile img {
-    min-width: 330px;
+    min-width: 270px;
     width: 80%;
     height: auto;
 }
@@ -860,7 +860,7 @@ nav {
 
 .marquee-content span {
     display: inline-block;
-    padding: 0 70px;
+    padding: 0 3.5vw;
     font-size: 1.8rem;
     font-weight: 900;
     color: #FFD900;

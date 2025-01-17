@@ -1199,7 +1199,7 @@ select {
     height: 220px;
     border-radius: 15px;
     font-size: 0.8rem;
-    padding: 25px 25px;
+    padding: 25px 20px;
     resize: none;
 
     width: 100%;
@@ -1348,7 +1348,6 @@ select {
 }
 
 .flip-box {
-
     position: relative;
     min-width: 140px;
     min-height: 40px;
@@ -1461,9 +1460,7 @@ select {
 .scrollable-text {
     background: #d4d4d4;
     max-height: 500px;
-
     line-height: 1.3rem;
-
     overflow-y: auto;
     padding: 0.85rem;
     border-left: 2px #5050504d solid;

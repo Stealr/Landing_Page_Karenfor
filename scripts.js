@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.nav__btn').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Отменяем стандартное поведение ссылки
+      const targetId = this.getAttribute('href'); // Получаем значение href (например, "#section")
+      const targetElement = document.querySelector(targetId); // Находим целевой элемент
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к элементу
+      }
+    });
+  });
+
   const svgElement = document.querySelector('svg');
 
   const paths = svgElement.querySelectorAll('path');

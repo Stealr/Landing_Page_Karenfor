@@ -574,11 +574,13 @@ nav {
 .slide-text {
     display: flex;
     overflow: hidden;
+    background-color: #fbdcac;
 }
 
 .about-us__text.mobile {
     display: none;
     padding: 35px;
+    border-radius: 15px 15px 0 0;
 }
 
 .about-us__text {
@@ -753,8 +755,12 @@ nav {
 /*----------------------------------------*/
 
 @media (max-width: 1250px) {
+    .container-main-slider {
+        background: #FFA807;
+    }
+
     .main-slider {
-        border-radius: 0;
+        border-radius: 15px 15px 0 0;
     }
 
     .slide-text {

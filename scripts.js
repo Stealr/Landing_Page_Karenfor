@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   document.querySelectorAll('.nav__btn').forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault(); // Отменяем стандартное поведение ссылки

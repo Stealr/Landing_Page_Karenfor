@@ -2,6 +2,7 @@ html {
     font-family: "Montserrat", serif;
     font-size: calc(14px + (6 * ((100vw - 350px) / 1000)));
     scroll-behavior: smooth;
+    padding: env(safe-area-inset);
 }
 
 /*------------------------------------------------------------------*/
@@ -140,6 +141,7 @@ header {
     height: 20vw;
     background-color: #ffdea9;
     filter: blur(200px);
+    -webkit-filter: blur(200px);
     z-index: -10;
 }
 

@@ -867,7 +867,7 @@ nav {
 .marquee-content {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll 30s linear infinite;
+    animation: scroll 22s linear infinite;
     padding: 1.5rem 0;
 }
 

@@ -2,7 +2,11 @@ html {
     font-family: "Montserrat", serif;
     font-size: calc(14px + (6 * ((100vw - 350px) / 1000)));
     scroll-behavior: smooth;
+
     padding: env(safe-area-inset);
+}
+input, textarea, select, button {
+    touch-action: manipulation;
 }
 
 /*------------------------------------------------------------------*/
@@ -757,11 +761,12 @@ nav {
 /*----------------------------------------*/
 
 @media (max-width: 1250px) {
-    .container-main-slider {
+    .container-main-slider{
         background: #FFA807;
     }
 
     .main-slider {
+        border-radius: 0;
         border-radius: 15px 15px 0 0;
     }
 
@@ -1209,7 +1214,7 @@ select {
     height: 220px;
     border-radius: 15px;
     font-size: 0.8rem;
-    padding: 25px 20px;
+    padding: 25px 18px;
     resize: none;
 
     width: 100%;
@@ -1358,6 +1363,7 @@ select {
 }
 
 .flip-box {
+
     position: relative;
     min-width: 140px;
     min-height: 40px;
@@ -1470,7 +1476,9 @@ select {
 .scrollable-text {
     background: #d4d4d4;
     max-height: 500px;
+
     line-height: 1.3rem;
+
     overflow-y: auto;
     padding: 0.85rem;
     border-left: 2px #5050504d solid;

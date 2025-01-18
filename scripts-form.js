@@ -112,13 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fields.email.addEventListener('blur', () => validateField(fields.email, regexes.email, 'Введите корректную почту'));
 
-    form.addEventListener('submit', function (event) {
+    //temp solution
+    form.addEventListener('submit', async function submitForm(event) {
         event.preventDefault();
-
-        isValid = true;
-
+    
         document.querySelectorAll('.error-message').forEach(msg => msg.remove());
-
+    
+        let isValid = true;
+    
         validateRequired(fields.name);
         validateField(fields.email, regexes.email, 'Введите корректную почту');
         validateTel();
@@ -126,17 +127,37 @@ document.addEventListener('DOMContentLoaded', function () {
         validateRequired(fields.text);
         if (!fields.checkbox.querySelector('input').checked) {
             showError(fields.checkbox, 'Необходимо согласие на обработку данных');
+            isValid = false;
         }
-
-
+    
         if (isValid) {
-            const flipBox = document.querySelector('.flip-box');
-            if (!flipBox.classList.contains('flipped')) {
-                flipBox.classList.add('flipped');
-                setTimeout(() => flipBox.classList.remove('flipped'), 2000);
-            }
+            const formData = {
+                name: fields.name.value,
+                email: fields.email.value,
+                phone: fields.tel.value,
+                subject: fields.theme.textContent,
+                text: fields.text.value
+            };
+    
+            try {
+                fetch("https://www.form-to-email.com/api/s/MbDFD56pbiSq", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }).catch(error => console.error('Error:', error));
 
-            clearForm();
+                const flipBox = document.querySelector('.flip-box');
+                    if (!flipBox.classList.contains('flipped')) {
+                        flipBox.classList.add('flipped');
+                        setTimeout(() => flipBox.classList.remove('flipped'), 2000);
+                    }
+    
+                clearForm();
+            } catch (error) {
+                console.error('Error:', error);
+            }
         }
     });
 

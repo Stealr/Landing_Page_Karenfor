@@ -5,7 +5,11 @@ html {
 
     padding: env(safe-area-inset);
 }
-input, textarea, select, button {
+
+input,
+textarea,
+select,
+button {
     touch-action: manipulation;
 }
 
@@ -764,7 +768,7 @@ nav {
 /*----------------------------------------*/
 
 @media (max-width: 1250px) {
-    .container-main-slider{
+    .container-main-slider {
         background: #FFA807;
     }
 
@@ -872,7 +876,7 @@ nav {
 .marquee-content {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll 22s linear infinite;
+    animation: scroll 20s linear infinite;
     padding: 1.5rem 0;
 }
 
@@ -884,13 +888,17 @@ nav {
     color: #FFD900;
 }
 
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 

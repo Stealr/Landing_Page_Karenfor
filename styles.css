@@ -595,9 +595,12 @@ nav {
 }
 
 .about-us__back {
-    background: linear-gradient(180deg, #FFBF41, #FFA807);
+    background: linear-gradient(180deg, #FFBF41, #FFA807), url("assets/Background-of-icons.png");
+    background-blend-mode: overlay;
+
     height: 100%;
     border-radius: 0 0 0 calc((1790px - 100vw) * 0.15);
+
 }
 
 .about-us__text .text {
@@ -812,7 +815,9 @@ nav {
     }
 
     .about-us__text {
-        background: linear-gradient(180deg, #FFBF41, #FFA807);
+        background: linear-gradient(180deg, #FFBF41, #FFA807), url("assets/Background-of-icons.png");
+        background-blend-mode: overlay;
+        background-size: contain;
     }
 
     .about-us__back {

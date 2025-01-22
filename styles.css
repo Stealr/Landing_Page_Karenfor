@@ -176,7 +176,7 @@ nav {
 }
 
 .nav__content {
-    padding: 14px 2.7vw;
+    padding: 14px max(2.7vw, 22px);
     display: flex;
     align-items: center;
     justify-content: space-between;

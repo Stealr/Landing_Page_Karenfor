@@ -1,6 +1,5 @@
-### Дизайн сайта
+Использован чистый HTML, CSS и JavaScript.
 
-Верстал и программировал адаптивный интерфейс лендинга торгового центра, включая динамический слайдер, анимацию SVG и контактную форму с обработкой пользовательских данных. Оптимизировал производительность и кроссбраузерную совместимость, используя инструмент lighthouse
-Применял чистый HTML, CSS и JavaScript.
+![karenfor com_](https://github.com/user-attachments/assets/c267cbf8-3693-4576-bda0-0618ad87a842)
 
-![Design adjustments](https://github.com/user-attachments/assets/8bb82f87-a518-4431-86db-326822358f3d)
+![chrome_Tha7vGcJQO](https://github.com/user-attachments/assets/e28aac56-8415-4980-a688-fdf88acf5207)

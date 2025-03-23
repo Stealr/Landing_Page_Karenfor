@@ -1,2 +1,6 @@
 ### Дизайн сайта
-https://www.figma.com/design/bxKjpqgXbUJKiJbYo90Ybw/Design-of-Karenfore?node-id=509-2&t=y0mDNxiGWaHUF2jU-1
+
+Верстал и программировал адаптивный интерфейс лендинга торгового центра, включая динамический слайдер, анимацию SVG и контактную форму с обработкой пользовательских данных. Оптимизировал производительность и кроссбраузерную совместимость, используя инструмент lighthouse
+Применял чистый HTML, CSS и JavaScript.
+
+![Design adjustments](https://github.com/user-attachments/assets/8bb82f87-a518-4431-86db-326822358f3d)
